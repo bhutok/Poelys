@@ -2,15 +2,16 @@ name: Build Poelys APK
 
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
+
+permissions:
+  contents: read
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
       - name: Setup Node
@@ -24,13 +25,22 @@ jobs:
           distribution: temurin
           java-version: 21
 
-      - name: Install dependencies
-        run: |
-          npm install --no-audit --no-fund
-          npm install @capacitor/core@7 @capacitor/android@7 --save
-          npm install @capacitor/cli@7 --save-dev
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
 
-      - name: Generate Android project
+      - name: Install Android SDK Packages
+        run: |
+          sdkmanager "platform-tools" "platforms;android-35" "build-tools;35.0.0"
+
+      - name: Install Project Dependencies
+        run: npm install --legacy-peer-deps
+
+      - name: Install Capacitor
+        run: |
+          npm install --legacy-peer-deps @capacitor/core@7 @capacitor/android@7
+          npm install --legacy-peer-deps --save-dev @capacitor/cli@7
+
+      - name: Generate Android Project
         run: npx cap add android
 
       - name: Sync Android
