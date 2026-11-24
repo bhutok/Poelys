@@ -1,9 +1,10 @@
+
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'com.khisbul.poelys',
+  appId: 'com.poelys.music',
   appName: 'Poelys',
-  webDir: 'out',
+  webDir: 'www',
   server: {
     url: 'https://poelys.vercel.app',
     cleartext: false
