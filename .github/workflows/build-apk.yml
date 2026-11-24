@@ -40,11 +40,21 @@ jobs:
           npm install --legacy-peer-deps @capacitor/core@7 @capacitor/android@7
           npm install --legacy-peer-deps --save-dev @capacitor/cli@7
 
+
       - name: Generate Android Project
         run: npx cap add android
 
+      - name: Prepare Capacitor Directories
+        run: |
+          mkdir -p www
+          mkdir -p android/app/src/main/assets/public
+          if [ ! -f www/index.html ]; then
+            echo '<!DOCTYPE html><html><body>Poelys</body></html>' > www/index.html
+          fi
+
       - name: Sync Android
         run: npx cap sync android
+
 
       - name: Build APK
         run: |
