@@ -22,12 +22,10 @@ import {
   Info,
   KeyRound,
   Layers,
-  MessageCircle,
   MessageSquareQuote,
   Minus,
   Moon,
   MoonStar,
-  Music2,
   Palette,
   PauseCircle,
   PictureInPicture2,
@@ -1947,72 +1945,16 @@ export function SettingsView() {
       {/* 5. DEVELOPER COMMUNITY */}
       {showSection(
         'community',
-        'community komunitas developer saluran whatsapp tiktok telegram sannforum Khisbul'
+        'community komunitas developer telegram clickbin Khisbul'
       ) && (
         <section data-testid="developer-community" className="space-y-2.5">
           <h2 className="px-1 text-[12px] font-bold uppercase tracking-wider text-[var(--m3-primary)]">
             Komunitas Developer
           </h2>
           <div className="rounded-[24px] metro-surface overflow-hidden divide-y divide-black/[0.06] dark:divide-white/[0.06]">
-            {/* Saluran WhatsApp */}
-            <a
-              href="https://whatsapp.com/channel/0029Vb7vOOyLY6cyTRQF1M06"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left hover:bg-black/[0.03] dark:hover:bg-white/[0.04] transition-colors"
-            >
-              <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                <span
-                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                  style={{ backgroundColor: '#22C55E22', color: '#22C55E' }}
-                >
-                  <MessageCircle className="w-[18px] h-[18px]" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[14.5px] font-semibold leading-snug">
-                    Saluran WhatsApp
-                  </p>
-                  <p className="text-[12.5px] opacity-60 truncate mt-0.5">
-                    whatsapp.com/channel/0029Vb7vOOyLY6cyTRQF1M06
-                  </p>
-                </div>
-              </div>
-              <ExternalLink className="w-4 h-4 opacity-50 shrink-0" />
-            </a>
-
-            {/* TikTok */}
-            <a
-              href="https://www.tiktok.com/@sannforum.id"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left hover:bg-black/[0.03] dark:hover:bg-white/[0.04] transition-colors"
-            >
-              <div className="flex items-center gap-3.5 min-w-0 flex-1">
-                <span
-                  className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
-                  style={{
-                    backgroundColor:
-                      'color-mix(in srgb, var(--m3-primary) 14%, transparent)',
-                    color: 'var(--m3-primary)',
-                  }}
-                >
-                  <Music2 className="w-[18px] h-[18px]" />
-                </span>
-                <div className="min-w-0 flex-1">
-                  <p className="text-[14.5px] font-semibold leading-snug">
-                    TikTok
-                  </p>
-                  <p className="text-[12.5px] opacity-60 truncate mt-0.5">
-                    @sannforum.id
-                  </p>
-                </div>
-              </div>
-              <ExternalLink className="w-4 h-4 opacity-50 shrink-0" />
-            </a>
-
             {/* Telegram */}
             <a
-              href="https://t.me/sannnforums"
+              href="https://t.me/clickbin"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full flex items-center justify-between gap-3 px-4 py-3.5 text-left hover:bg-black/[0.03] dark:hover:bg-white/[0.04] transition-colors"
@@ -2029,7 +1971,7 @@ export function SettingsView() {
                     Telegram
                   </p>
                   <p className="text-[12.5px] opacity-60 truncate mt-0.5">
-                    t.me/sannnforums
+                    @clickbin
                   </p>
                 </div>
               </div>
@@ -2039,7 +1981,7 @@ export function SettingsView() {
             {/* Subtle, balanced attribution matching Settings typography */}
             <div className="px-4 py-3">
               <p className="text-[11.5px] font-medium tracking-wide opacity-55">
-                POWERED BY Khisbul
+                POWERED By Khisbul
               </p>
             </div>
           </div>
