@@ -1,0 +1,240 @@
+import type { PlayEvent, PlayerSettings, Track, UserPlaylist } from './types';
+
+export const SEED_TRACKS: Track[] = [
+  {
+    videoId: 'fHI8X4OXluQ',
+    title: 'Blinding Lights',
+    artist: 'The Weeknd',
+    artists: [{ artistId: 'UC0WP5P-ufpRfjbNrmOWwLBQ', name: 'The Weeknd' }],
+    album: { albumId: 'MPREb_z4kX8', name: 'After Hours' },
+    duration: 200,
+    thumbnail: 'https://i.ytimg.com/vi/fHI8X4OXluQ/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: '4NRXx6U8ABQ',
+    title: 'Blinding Lights (Official Video)',
+    artist: 'The Weeknd',
+    artists: [{ artistId: 'UC0WP5P-ufpRfjbNrmOWwLBQ', name: 'The Weeknd' }],
+    album: null,
+    duration: 262,
+    thumbnail: 'https://i.ytimg.com/vi/4NRXx6U8ABQ/hqdefault.jpg',
+    type: 'VIDEO',
+  },
+  {
+    videoId: '5NV6Rdv1a3I',
+    title: 'Get Lucky',
+    artist: 'Daft Punk feat. Pharrell Williams',
+    artists: [{ artistId: 'UC_kRDKYrUlrbtrSiyu5Tflg', name: 'Daft Punk' }],
+    album: { albumId: 'MPREb_RAM', name: 'Random Access Memories' },
+    duration: 248,
+    thumbnail: 'https://i.ytimg.com/vi/5NV6Rdv1a3I/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'mqgEYRtWMJU',
+    title: 'The Son of Flynn',
+    artist: 'Daft Punk',
+    artists: [{ artistId: 'UC_kRDKYrUlrbtrSiyu5Tflg', name: 'Daft Punk' }],
+    album: { albumId: 'MPREb_TRON', name: 'TRON: Legacy' },
+    duration: 95,
+    thumbnail: 'https://i.ytimg.com/vi/mqgEYRtWMJU/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'kJQP7kiw5Fk',
+    title: 'Midnight City',
+    artist: 'M83',
+    artists: [{ artistId: 'UC_M83', name: 'M83' }],
+    album: { albumId: 'MPREb_M83', name: "Hurry Up, We're Dreaming" },
+    duration: 243,
+    thumbnail: 'https://i.ytimg.com/vi/dX3k_QDnzHE/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: '2Vv-BfVoq4g',
+    title: 'Perfect',
+    artist: 'Ed Sheeran',
+    artists: [{ artistId: 'UC0C-w0YjGpqDXGB8IHb662A', name: 'Ed Sheeran' }],
+    album: { albumId: 'MPREb_DIV', name: '÷ (Divide)' },
+    duration: 263,
+    thumbnail: 'https://i.ytimg.com/vi/2Vv-BfVoq4g/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'DyDfgMOUjCI',
+    title: 'bad guy',
+    artist: 'Billie Eilish',
+    artists: [{ artistId: 'UCiGm_E4ZwYSHV3bcW1pnSeQ', name: 'Billie Eilish' }],
+    album: { albumId: 'MPREb_WWAFA', name: 'WHEN WE ALL FALL ASLEEP, WHERE DO WE GO?' },
+    duration: 194,
+    thumbnail: 'https://i.ytimg.com/vi/DyDfgMOUjCI/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'UceaB4D0jpo',
+    title: 'Starboy',
+    artist: 'The Weeknd feat. Daft Punk',
+    artists: [{ artistId: 'UC0WP5P-ufpRfjbNrmOWwLBQ', name: 'The Weeknd' }],
+    album: { albumId: 'MPREb_SB', name: 'Starboy' },
+    duration: 230,
+    thumbnail: 'https://i.ytimg.com/vi/34Na4j8AVgA/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'OPf0YbXqDm0',
+    title: 'Uptown Funk',
+    artist: 'Mark Ronson feat. Bruno Mars',
+    artists: [{ artistId: 'UC_MarkRonson', name: 'Mark Ronson' }],
+    album: { albumId: 'MPREb_US', name: 'Uptown Special' },
+    duration: 270,
+    thumbnail: 'https://i.ytimg.com/vi/OPf0YbXqDm0/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'nfs8NYg7yQM',
+    title: 'Attention',
+    artist: 'Charlie Puth',
+    artists: [{ artistId: 'UCwppDrjsWsZg nature', name: 'Charlie Puth' }],
+    album: { albumId: 'MPREb_VN', name: 'Voicenotes' },
+    duration: 211,
+    thumbnail: 'https://i.ytimg.com/vi/nfs8NYg7yQM/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'JGwWNGJdvx8',
+    title: 'Shape of You',
+    artist: 'Ed Sheeran',
+    artists: [{ artistId: 'UC0C-w0YjGpqDXGB8IHb662A', name: 'Ed Sheeran' }],
+    album: { albumId: 'MPREb_DIV', name: '÷ (Divide)' },
+    duration: 233,
+    thumbnail: 'https://i.ytimg.com/vi/JGwWNGJdvx8/hqdefault.jpg',
+    type: 'SONG',
+  },
+  {
+    videoId: 'lp-EO5I60KA',
+    title: 'Thinking Out Loud',
+    artist: 'Ed Sheeran',
+    artists: [{ artistId: 'UC0C-w0YjGpqDXGB8IHb662A', name: 'Ed Sheeran' }],
+    album: { albumId: 'MPREb_X', name: 'x' },
+    duration: 281,
+    thumbnail: 'https://i.ytimg.com/vi/lp-EO5I60KA/hqdefault.jpg',
+    type: 'SONG',
+  },
+];
+
+export const DEFAULT_SETTINGS: PlayerSettings = {
+  theme: 'dark',
+  pureBlack: false,
+  dynamicColor: true,
+  accentPreset: 'metrolist',
+  dockStyle: 'default',
+  playerBackgroundStyle: 'GRADIENT',
+  sliderStyle: 'SQUIGGLY',
+  playerControlsStyle: 'EXPRESSIVE',
+  aodClockStyle: 'BOLD',
+  aodArtworkShape: 'SQUIRCLE',
+  aodBackgroundStyle: 'AMBIENT_GLOW',
+  equalizerPreset: 'FLAT',
+  equalizerBands: [0, 0, 0, 0, 0],
+  bassBoostEnabled: false,
+  thumbnailCornerRadius: 24,
+  swipeToChangeTrack: true,
+  lyricsAnimationStyle: 'APPLE',
+  lyricsTextPosition: 'CENTER',
+  lyricsFontSize: 24,
+  lyricsLineSpacing: 1.35,
+  lyricsProgressiveBlur: true,
+  lyricsNeutralColor: false,
+  lyricsClickToSeek: true,
+  lyricsAutoScroll: true,
+  lyricsGlobalOffsetMs: 0,
+  region: 'ID',
+  hideVideoSongs: false,
+  autoContinueRadio: true,
+  backgroundPlay: true,
+  autoPopoutIsland: false,
+  playbackRate: 1,
+  seekDurationSeconds: 10,
+  keepPausedOnSongChange: false,
+  autoSkipOnError: true,
+  ytCookie: '',
+};
+
+export function createInitialSeedState(): {
+  history: PlayEvent[];
+  likedTracks: Track[];
+  playlists: UserPlaylist[];
+} {
+  const now = Date.now();
+  const day = 24 * 60 * 60 * 1000;
+
+  const history: PlayEvent[] = [
+    {
+      track: SEED_TRACKS[0],
+      playCount: 9,
+      lastPlayedAt: now - 2 * 3600 * 1000,
+      firstPlayedAt: now - 14 * day,
+    },
+    {
+      track: SEED_TRACKS[2],
+      playCount: 7,
+      lastPlayedAt: now - 5 * 3600 * 1000,
+      firstPlayedAt: now - 12 * day,
+    },
+    {
+      track: SEED_TRACKS[3],
+      playCount: 5,
+      lastPlayedAt: now - 1 * day,
+      firstPlayedAt: now - 10 * day,
+    },
+    {
+      track: SEED_TRACKS[4],
+      playCount: 6,
+      lastPlayedAt: now - 10 * day,
+      firstPlayedAt: now - 30 * day,
+    },
+    {
+      track: SEED_TRACKS[6],
+      playCount: 4,
+      lastPlayedAt: now - 12 * day,
+      firstPlayedAt: now - 25 * day,
+    },
+    {
+      track: SEED_TRACKS[7],
+      playCount: 5,
+      lastPlayedAt: now - 9 * day,
+      firstPlayedAt: now - 20 * day,
+    },
+  ];
+
+  const likedTracks: Track[] = [
+    SEED_TRACKS[0],
+    SEED_TRACKS[2],
+    SEED_TRACKS[4],
+    SEED_TRACKS[7],
+  ];
+
+  const playlists: UserPlaylist[] = [
+    {
+      id: 'pl-spatial-night',
+      name: 'Night Drive',
+      description: 'Synth-driven midnight essentials curated from your listening flow.',
+      tags: ['Night', 'Synth'],
+      createdAt: now - 7 * day,
+      updatedAt: now - 2 * day,
+      tracks: [SEED_TRACKS[0], SEED_TRACKS[2], SEED_TRACKS[4], SEED_TRACKS[7]],
+    },
+    {
+      id: 'pl-focus-orbit',
+      name: 'Deep Focus Orbit',
+      description: 'Clean electronic textures for late-night coding and study sessions.',
+      tags: ['Focus', 'Chill'],
+      createdAt: now - 5 * day,
+      updatedAt: now - 1 * day,
+      tracks: [SEED_TRACKS[3], SEED_TRACKS[2], SEED_TRACKS[6]],
+    },
+  ];
+
+  return { history, likedTracks, playlists };
+}
